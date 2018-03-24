@@ -1,0 +1,2 @@
+#select to view all items and their associated owners
+SELECT * FROM tbl_items LEFT JOIN tbl_people ON tbl_items.pplid = tbl_people.pplid;
