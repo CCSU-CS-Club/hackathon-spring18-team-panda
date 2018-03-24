@@ -2,20 +2,31 @@
 <html lang="en">
   <head>
 <style>
-td {
-  padding-left: 10px;
-  border: 1px solid black;
-  width: 200px;
+td id ="One"{
+ 	padding-left: 10px;
+ 	 border: 1px solid black;
+	 width:300;
 }
 table{
 	padding-right: 10px;	
 }
 img{
 	padding-right: 50px;
+}
 table tr{
  	width: 200px;
 }
+footer{
+	position:fixed;
+	bottom:0;
 }
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+
 </style>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -28,36 +39,38 @@ table tr{
 	
   </head>
   <body>
-    <h1><center><Strong>The Hartford</Strong></center></h1>
-	
-
-     <button type="button" class="btn btn-success"><a href="file:///C:/Users/Michael%20Brouwer/Desktop/Hackathon/hackathon-spring18-team-panda/claim.htm">Add Claim</a></button>
-
+<header>
+    <h1><center><Strong><font size="10">The Hartford</font></Strong></center></h1>
+</header>
+<div class="panel panel-default">
+    <div class="panel-body"><button type="button" class="btn btn-success"><a href="file:///C:/Users/Michael%20Brouwer/Desktop/Hackathon/hackathon-spring18-team-panda/claim.htm">Add Claim</a></button>
+</div>
+  </div>
+     
 
 
 <div class="row">
   <div class="col-sm-1"></div>
-  <div class="col-sm-3"><img src="Hart_logo.jpg"></div>
+  <div class="col-sm-3"><img src="Hart.png" Height="150"></div>
   <div class="col-sm-6"><div class="container-fluid">
   <table class="table table-sm">
  
-  <tbody>
     <tr>
-      <td>Name</td>
-      <td>Val</td>
+      <td >Name</td>
+      <td id="One">Val</td>
     </tr>
     <tr>
       <td>Description</td>
-      <td>Val</td>
+      <td id="One">Val</td>
     </tr>
     <tr>
        <td>Int Value</td>
-      <td>Val</td>
+      <td id="One">Val</td>
     </tr>
 <tr>
       
       <td>Serial Number</td>
-      <td>Val</td>
+      <td id="One">Val</td>
     </tr>
 </table>
 </div>
@@ -68,7 +81,8 @@ table tr{
 </div></div>
   <div class="col-sm-1"></div>
 </div>
-
+<div class="panel panel-default"><center style="font-size:small">Contact Info: ""</center>
+</div>
 
 
     <!-- Optional JavaScript -->
@@ -76,5 +90,7 @@ table tr{
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
   </body>
+
 </html>
