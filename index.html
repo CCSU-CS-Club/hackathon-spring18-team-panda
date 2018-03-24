@@ -28,20 +28,25 @@ body {
 }
 
 </style>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://s0.hfdstatic.com/sites/the_hartford/css/screen.min.css?v=2018-03-10_1444930866310">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://s0.hfdstatic.com/sites/the_hartford/css/screen.min.css?v=2018-03-10_1444930866310">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <title>The Hartford</title>
 	
   </head>
   <body>
-<header>
-    <h1><center><Strong><font size="10">The Hartford</font></Strong></center></h1>
-</header>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1>The Hartford</h1>
+      </div>
+    </div>
 <div class="panel panel-default">
     <div class="panel-body"><button type="button" class="btn btn-success"><a href="file:///C:/Users/Michael%20Brouwer/Desktop/Hackathon/hackathon-spring18-team-panda/claim.htm">Add Claim</a></button>
 </div>
@@ -76,7 +81,7 @@ body {
 </div>
 </div>
   <div class="col-sm-1"><div class="btn-group-vertical">
-  	<button type="button" class="btn btn-danger">Remove</button>
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Remove</button>
 	<button type="button" class="btn btn-warning">Edit</button>
 </div></div>
   <div class="col-sm-1"></div>
@@ -84,6 +89,31 @@ body {
 <div class="panel panel-default"><center style="font-size:small">Contact Info: ""</center>
 </div>
 
+ <!-- The Removal Modal -->
+ <div class="modal fade" id="deleteModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Warning</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Are you sure you wish to remove this item?
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Delete</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
