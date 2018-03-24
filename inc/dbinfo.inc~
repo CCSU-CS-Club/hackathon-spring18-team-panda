@@ -1,0 +1,6 @@
+<?php
+$servername = "localhost";
+$username = "pm";
+$password = "Pqnfw9jFuU8md3kX";
+$dbname = "pm";
+?>
