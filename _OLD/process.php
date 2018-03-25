@@ -3,9 +3,6 @@
 <title>Process Item | Household Items</title></head>
 <body>
 <?php
-var_dump($_POST);
-echo "<br>";
-var_dump($_FILES);
 require "/var/www/html/hk/inc/dbinfo.inc";
 //// global vars
 $dtnowx = date("mdy-His");
@@ -16,10 +13,6 @@ $fullquality = 90;
 $thumbquality = 70;
 $maximgsize = 20000000;
 //// dynamic variables
-$in = $_POST["itemname"];
-$id = $_POST["itemdescription"];
-$sn = $_POST["serial"];
-$iv = $_POST["itemvalue"];
 //// setting new filenames based off the type
 $newfilenamet_1 = "ITEM-T-$dtnowx.jpg";
 $newfilenamef_1 = "ITEM-F-$dtnowx.jpg";
@@ -83,7 +76,7 @@ echo "<img src='./images/$newfilenamef_1' style='margin:auto;display:block;borde
 echo "$nowfull or $dtnowx";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {die("Connection failed: " . $conn->connect_error);} 
-$sql = "INSERT INTO `tbl_items` (`itmid`, `pplid`, `itmname`, `idmdesc`, `itmsn`, `itmvalue`, `itmats`) VALUES (NULL, '1', '$in', '$id', 'auto3', '111.11', '$nowfull');";
+$sql = "INSERT INTO `tbl_items` (`itmid`, `pplid`, `itmname`, `idmdesc`, `itmsn`, `itmvalue`, `itmats`) VALUES (NULL, '1', 'auto1', 'auto2', 'auto3', '111.11', '$nowfull');";
 if ($conn->query($sql) === TRUE) {
 	//echo "New record created successfully";
 	echo "Item added correctly";

@@ -35,7 +35,7 @@ $conn->close();
 header( 'Location: /hk/' ) ;
 //echo "success";
 } else {
-$_SESSION["level"] = "0";
+//$_SESSION["level"] = "0";
 //echo "fail";
 header( 'Location: /hk/login/?e=1' ) ;
 }  
