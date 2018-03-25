@@ -1,0 +1,10 @@
+--select to view all items and their associated owners
+SELECT * FROM tbl_items LEFT JOIN tbl_people ON tbl_items.pplid = tbl_people.pplid;
+--select to view all items from user 1
+SELECT * FROM tbl_items where pplid=1 ORDER by itmats DESC;
+--insert a new item into tbl_items for user 1
+INSERT INTO `tbl_items` (`itmid`, `pplid`, `itmname`, `idmdesc`, `itmsn`, `itmvalue`, `itmats`) VALUES (NULL, '1', 'VR system', 'For the kids.', '1234567890', '250.02', '2018-03-24 17:25:37');
+--delete item 2 for user 1
+DELETE FROM `tbl_items` WHERE `tbl_items`.`itmid` = 2;
+--update information for item 4
+UPDATE `tbl_items` SET `idmdesc` = 'Brown and blue leather.' WHERE `tbl_items`.`itmid` = 4;

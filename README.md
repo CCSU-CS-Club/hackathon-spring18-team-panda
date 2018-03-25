@@ -1,3 +1,4 @@
+
 # The Hartford Insurance App
 This app is built for customers holding renters' insurance policies. It enables them to upload and store images and information about their valuables.
 ## Getting Started
@@ -35,3 +36,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 * The Hartford Insurance Company
 * CCSU Computer Science Club
+=======
+# hackathon-spring18-team-panda
