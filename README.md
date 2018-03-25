@@ -1,14 +1,12 @@
-
-# The Hartford Insurance App
+# Household Items for The Hartford
 This app is built for customers holding renters' insurance policies. It enables them to upload and store images and information about their valuables.
 ## Getting Started
 Clone the repository to a machine running XAMP (Apache, PHP, MySQL).
-### Installing on Ubuntu 16.04
+### Tested on the following development environment
 ```
-1. sudo apt-get install apache2
-2. sudo apt-get install mysql-server
-3. sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
-4. sudo systemctl restart apache2
+- Centos 6.9
+- PHP 5.6.34
+- MYSQL 5.5.59
 ```
 To use the app, take a photo of the valuable item. Log into the web app, and you will see a list of your valuable items. You can then upload a new item, delete an item, or edit the description of an item.
 ### And coding style tests
@@ -16,12 +14,6 @@ To use the app, take a photo of the valuable item. Log into the web app, and you
 ## Deployment
 
 When deploying on a live system, make sure to store database login credentials in a file separate from the one in this project.
-
-## Built With
-
-* php7 - Back end
-* MySQL - Persistence ayer
-* Bootstrap - Front end.
 
 ## Authors
 
