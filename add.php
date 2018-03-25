@@ -1,3 +1,8 @@
+<?php
+require "/var/www/html/hk/inc/session-1.inc";
+require "/var/www/html/hk/inc/dbinfo.inc";
+$uid = $_SESSION["uid"];
+?>
 <!DOCTYPE html>
 <html>
 
@@ -5,7 +10,7 @@
     <link rel="stylesheet" href="https://s0.hfdstatic.com/sites/the_hartford/css/screen.min.css?v=2018-03-10_1444930866310">
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1>The Hartford</h1>
+            <h1>Household Items | Add</h1>
         </div>
     </div>
 </head>
@@ -42,11 +47,7 @@
     </div>
     <br>
     <br>
-    <div class="panel panel-default">
-        <center style="font-size:small">
-            <h2>TEAM PANDA 2018</h2>
-        </center>
-    </div>
+<div class="panel panel-default" style="background-color: black;color:white;"><center style="font-size:small"><h2 style="padding-top:10px;">TEAM PANDA - 2018</h2></center></div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"

@@ -1,3 +1,9 @@
+<?php
+require "/var/www/html/hk/inc/session-1.inc";
+require "/var/www/html/hk/inc/dbinfo.inc";
+$uid = $_SESSION["uid"];
+$name1 = $_SESSION["name"][0];
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -28,7 +34,7 @@ button{
 padding-bottom: 50px!important;
 }
 }
-
+.b {font-weight:bold;}
 </style>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -79,22 +85,21 @@ $(document).ready(function()
   <body>
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <h1>The Hartford</h1>
+        <h1>Household Items | <?php echo "$name1's"; ?> List</h1>
       </div>
-    </div><a href="/hk/add.php"><button type="button" class="btn btn-primary">Add Item</button></a>     
+    </div><a href="/hk/add.php"><button type="button" class="btn btn-primary">Add Item</button></a> <a href="/hk/logout"><button type="button" class="btn btn-primary">Log Out</button></a><br><br>     
 <?php
-require "/var/www/html/hk/inc/dbinfo.inc";
 //require "/var/www/html/hk/assets/inc/session-1.inc";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {die("Connection failed: " . $conn->connect_error);} 
-$sql = "SELECT itmid,itmname,idmdesc, itmsn,itmvalue,itmats FROM tbl_items where pplid=1 ORDER by itmats DESC;";
+$sql = "SELECT itmid,itmname,idmdesc, itmsn,itmvalue,itmats FROM tbl_items where pplid=$uid ORDER by itmats DESC;";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 	$img = date('mdy-His', strtotime($row["itmats"]));
 	echo "<div class='row'><div class='col-sm-1'></div><div class='col-sm-3'><a href='/hk/images/ITEM-F-$img.jpg'><img src='/hk/images/ITEM-T-$img.jpg' style='width:400px;'></a></div>";
-	echo "<div class='col-sm-6'><div class='container-fluid'><table class='table table-sm'><tr><td>Name</td><td>" . $row["itmname"] . "</td>";
-	echo "</tr><tr><td>Description</td><td>" . $row["idmdesc"] . "</td></tr><tr><td>Item Value</td><td>$" . $row["itmvalue"] . "</td></tr><tr><td>Serial Number</td>";
+	echo "<div class='col-sm-6'><div class='container-fluid'><table class='table table-sm'><tr><td class='b'>Name</td><td>" . $row["itmname"] . "</td>";
+	echo "</tr><tr><td class='b'>Description</td><td>" . $row["idmdesc"] . "</td></tr><tr><td class='b'>Value</td><td>$" . $row["itmvalue"] . "</td></tr><tr><td class='b'>Serial Number</td>";
 	echo "<td>" . $row["itmsn"] . "</td></tr></table></div></div>";
 	echo "<button type='button' class='btn btn-primary remove-button' data-toggle='modal' data-target='#deleteModal' data-link='remove.php?n=" . $row["itmid"] . "' onclick(changethislink(" . $row["itmid"] . ");)>Remove</button>&nbsp";
 	echo "<button type='button' class='btn btn-primary' max-width=100%!important><a href ='edit.php?n=" . $row["itmid"] . "'>Edit</a></button>";
@@ -107,6 +112,7 @@ if ($result->num_rows > 0) {
 }
 else {
 //echo "<tr><td colspan='5'>No associations on record.  See links below.</td></tr>";
+echo "<br><br><br><span style='color:red;font-weight:bold;text-align:center;font-size:20px;display:block;'>No items on record, please add one with the link above.</span><br><br><br>";
 }
 $conn->close();
 ?>
@@ -116,8 +122,7 @@ $conn->close();
 </div>
 <br>
 <br>
-<div class="panel panel-default" style="background-color: black;color:white;"><center style="font-size:small"><h2 style="padding-top:10px;">TEAM PANDA - 2018</h2></center>
-</div>
+<div class="panel panel-default" style="background-color: black;color:white;"><center style="font-size:small"><h2 style="padding-top:10px;">TEAM PANDA - 2018</h2></center></div>
 
  <!-- The Removal Modal -->
  <div class="modal fade" id="deleteModal">

@@ -11,12 +11,12 @@ $password = "panda";
 $dbname = "panda";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {die("Connection failed: " . $conn->connect_error);} 
-$sql = "SELECT pplid,pplsalt,pplhash,pplname FROM `tbl_people` WHERE pplemail='$ema' limit 1;";
+$sql = "SELECT pplid,pplsalt,pplhash,pplname,ppllevel FROM `tbl_people` WHERE pplemail='$ema' limit 1;";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 	$uid = $row["pplid"];
-	//$level = $row["maintlevel"];
+	$level = $row["ppllevel"];
 	$salt = $row["pplsalt"];
 	$hash = $row["pplhash"];
 	$name = explode(" ",$row["pplname"]);}
@@ -35,7 +35,7 @@ $conn->close();
 header( 'Location: /hk/' ) ;
 //echo "success";
 } else {
-//$_SESSION["level"] = "0";
+$_SESSION["level"] = "0";
 //echo "fail";
 header( 'Location: /hk/login/?e=1' ) ;
 }  
@@ -43,36 +43,41 @@ header( 'Location: /hk/login/?e=1' ) ;
     //echo "N0, mail is not set";
 }
 ?>
+<!DOCTYPE html>
 <html>
-<head>
 <title>Login | Household Items</title>
-<link rel="stylesheet" type="text/css" href="/pm/assets/css/loginstyle.css">
+<!--<meta http-equiv="refresh" content="3; url= /hk/login/" />-->
+<head>
+    <link rel="stylesheet" href="https://s0.hfdstatic.com/sites/the_hartford/css/screen.min.css?v=2018-03-10_1444930866310">
+    <!--<link rel="stylesheet" href="linkstyle.css">-->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1>Household Items | Welcome</h1>
+        </div>
+    </div>
 </head>
 <body>
-<div id="header">
-		<h1 style="padding-left:6px;">Login</h1>
-	</div>
-	<div id="content">
-		<br>
-<form method="post" action="?">
-		<table style="text-align:left;width:920px;">
+    <!--<a href="/hk">
+        <button type="button" class="btn btn-primary">Return to list</button>
+    </a> <a href="/hk/logout"><button type="button" class="btn btn-primary">Log Out</button></a><br><br>-->
+    <div class="container">
+
+<form method="post" action="?" style="margin:auto;display:block;">
+		<table style="text-align:left;width:100%;margin:auto;background-color:#eacfcf;">
 			<tbody>
 				<tr>
-					<td colspan="2" style="background-color:white;text-align:left;"><img src="/pm/assets/icn/logop.svgx" style="height:400px;"></td>
+					<td colspan="2" style="background-color:white;text-align:left;">       <img src="/hk/login_graphic.png" style="height:400px;margin:auto;display:block;"></td>
 				</tr>
-				<tr>
-			      		<td class="dh" colspan="2">Welcome to Household Items!</td>
-			    	</tr>
 			    	<tr>
-					<td class='or' style="width:130px;">Email</td>	
+					<td class='or' style="width:130px;font-weight:bold;">&nbsp;Email</td>	
 					<td class='ol'><input type="text" name="ema" value="" required></td>					
 			    	</tr>
 				<tr>
-					<td class='or'>Password</td>	
+					<td class='or' style="font-weight:bold;">&nbsp;Password</td>	
 					<td class='ol'><input type="password" name="pwd" value="" required></td>					
 			    	</tr>
 				<tr>
-					<td colspan=2" style="background-color:#ccc2df;"><br>
+					<td colspan=2" style="background-color:#cbf5fb;"><br>
 						<input type="submit" value="Login" style="width:400px;height:60px;font-size:28px;font-weight:bold;display:block;margin:auto;"><br>
 						<input type="reset" value="Reset" style="width:400px;height:60px;font-size:28px;font-weight:bold;display:block;margin:auto;"><br>
 					</td>
@@ -81,7 +86,13 @@ header( 'Location: /hk/login/?e=1' ) ;
 			</tbody>
 		</table>
 </form>
-		<br>
-	</div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<br><br>
+<div class="panel panel-default" style="background-color: black;color:white;"><center style="font-size:small"><h2 style="padding-top:10px;">TEAM PANDA - 2018</h2></center></div>
 </body>
-</html>
+</html

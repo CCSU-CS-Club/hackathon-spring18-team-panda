@@ -15,14 +15,15 @@ session_destroy();
     <link rel="stylesheet" href="linkstyle.css">
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1>Household Items | Goodbye</h1>
+            <h1>Household Items | Added</h1>
         </div>
     </div>
 </head>
+
 <body>
-    <!--<a href="/hk">
+    <a href="/hk">
         <button type="button" class="btn btn-primary">Return to list</button>
-    </a> <a href="/hk/logout"><button type="button" class="btn btn-primary">Log Out</button></a><br><br>-->
+    </a> <a href="/hk/logout"><button type="button" class="btn btn-primary">Log Out</button></a><br><br>
     <div class="container">
        <span style="text-align:center;font-weight:normal;background-color:white;height:150px;">
 <b>-</b>You have been <b>logged out</b>.<br><b>-</b>You will be <b>redirected</b> to the <b>login screen</b> in <b>3 seconds</b>.

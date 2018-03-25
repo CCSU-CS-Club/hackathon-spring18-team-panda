@@ -1,4 +1,8 @@
-
+<?php
+require "/var/www/html/hk/inc/session-1.inc";
+require "/var/www/html/hk/inc/dbinfo.inc";
+$uid = $_SESSION["uid"];
+?>
 <!DOCTYPE html>
 <html>
 
@@ -7,23 +11,23 @@
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1>The Hartford</h1>
+            <h1>Household Items | Edit</h1>
         </div>
     </div>
 </head>
 
 <body>
-    <a href="index.html">
+    <a href="/hk">
         <button type="button" class="btn btn-primary">Return to list</button>
-    </a>
+    </a> <a href="/hk/logout"><button type="button" class="btn btn-primary">Log Out</button></a><br><br>
     <div class="container">
         <h2>Edit your item:</h2>
-        <form action="update.php">
+        <form action="update.php" method="post">
 
 <?php
 require "/var/www/html/hk/inc/dbinfo.inc";
 $n = $_GET["n"];
-//require "/var/www/html/hk/assets/inc/session-1.inc";
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {die("Connection failed: " . $conn->connect_error);} 
 $sql = "SELECT itmid,itmname,idmdesc, itmsn,itmvalue,itmats FROM tbl_items where itmid=$n;";
@@ -39,9 +43,8 @@ echo "</div><div class='form-group'><label for='serial'>Serial Number (if applic
 echo "<input type='text' class='form-control' id='serial' placeholder='Enter serial number' name='serial' value='" . $row["itmsn"] . "'>";
 echo "</div><div class='form-group'><label for='itemvalue'>Item Value ($):</label>";
 echo "<input type='text' class='form-control' id='itemvalue' placeholder='Enter item name' name='itemvalue' value='" . $row["itmvalue"] . "'>";
-echo "</div><div class='row'><div class='col-sm-3'><button type='submit' class='btn btn-primary'>Submit</button>";
-echo "</div><div clas='col-sm-3'><a href='/hk/'><button type='button' class='btn btn-primary'>Cancel Edit</button></a></div></div>";
-
+echo "</div><div class='row'><div class='col-sm-3'><button type='submit' class='btn btn-primary'>UPDATE</button>";
+echo "</div><div clas='col-sm-3'><input type='hidden' name='n' value='$n'><a href='/hk/'><button type='button' class='btn btn-primary'>Cancel Edit</button></a></div></div>";
 	//echo "<a href='/hk/images/ITEM-F-$img.jpg'><img src='/hk/images/ITEM-T-$img.jpg'></a>" . "<br>Name: " . $row["itmname"] . " - Desc: " . $row["idmdesc"] . "<br>SN: " . $row["itmsn"] . " - Price: $" . $row["itmvalue"] . ".";
 	echo "<br>";
 	} 
@@ -60,10 +63,6 @@ $conn->close();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 <br><br><br><br>
-    <div class="panel panel-default">
-        <center style="font-size:small">
-            <h2>TEAM PANDA 2018</h2>
-        </center>
-    </div>
+<div class="panel panel-default" style="background-color: black;color:white;"><center style="font-size:small"><h2 style="padding-top:10px;">TEAM PANDA - 2018</h2></center></div>
 </body>
 </html
