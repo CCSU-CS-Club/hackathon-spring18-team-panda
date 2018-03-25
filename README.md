@@ -9,7 +9,6 @@ Clone the repository to a machine running XAMP (Apache, PHP, MySQL).
 - MYSQL 5.5.59
 ```
 To use the app, take a photo of the valuable item. Log into the web app, and you will see a list of your valuable items. You can then upload a new item, delete an item, or edit the description of an item.
-### And coding style tests
 
 ## Deployment
 
