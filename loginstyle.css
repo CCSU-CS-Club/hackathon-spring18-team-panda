@@ -1,0 +1,20 @@
+body{background-color:#ffd28e;font-family:arial;}
+h1,p {padding:0px;margin:0px;}
+table {margin:auto;border-collapse: collapse;border: 4px solid black;}
+th, td {border: 2px solid black;padding:6px;}
+img {display:block;margin:auto;}
+.oc {text-align: center; background-color:#ffe7a0;vertical-align:top;font-weight:bold;}
+.ol {text-align: left; background-color:#eaeaea;vertical-align:top;}
+.od {text-align: center; background-color: #ffcc33;vertical-align:top;padding-left:0px;padding-right:0px;}
+.ls {text-align: center; background-color: #ffcc33;vertical-align:top;padding-left:0px;padding-right:0px;font-weight:bold;}
+.ds {text-align:center; background-color: #ffcc33;vertical-align:top;font-family:courier;padding-left:0px;padding-right:0px;}
+.or {text-align: right; background-color:#c5c5c5;vertical-align:top;font-weight:bold;}
+.dh {text-align:left;color:white;font-weight: bold;background-color:blue;}
+.links {height:20px;width:960px;background-color:#beffcb;text-align:center;margin:auto;font-weight: bold;}
+#footer {height:20px;width:960px;background-color:#dadada;text-align:center;margin:auto;font-weight: bold;}
+#header {height:40px;width:960px;background-color:#dadada;text-align:left;margin:auto;}
+#content {width:960px;background-color:#907341;margin:auto;}
+a {color:black;}
+a:visited {color:black;}
+a:hover {color:white;background-color:black;padding:4px;font-weight:bold;}
+input {width:600px;height:50px;font-size:30px;}
